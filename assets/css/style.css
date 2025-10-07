@@ -2588,6 +2588,25 @@ body.loaded {
   background: var(--maincolor);
 }
 
+/* LinkedIn Posts Hover Effects
+-----------------------------------------------------------------*/
+.linkedin-box.portfolio:hover {
+  transform: scale(1.05) !important;
+}
+
+.linkedin-box.portfolio:hover .overlay {
+  background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.6)) !important;
+}
+
+.linkedin-box.portfolio:hover .fab.fa-linkedin-in {
+  color: #0077b5 !important;
+  transform: scale(1.2);
+}
+
+.linkedin-box.portfolio .fab.fa-linkedin-in {
+  transition: all 0.3s ease;
+}
+
 /* Contact
 -----------------------------------------------------------------*/
 .contact {
