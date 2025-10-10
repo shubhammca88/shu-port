@@ -1889,6 +1889,7 @@ body.loaded {
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 10px;
   position: relative;
+  text-align: center;
 }
 
 .skills .item .value {
@@ -4197,6 +4198,43 @@ img.left {
 }
 
 /* ====================== [ End Helper Classes  ] ====================== */
+/* Custom inline styles moved from index.html */
+.logo-text {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 20px;
+  color: var(--maincolor);
+  font-family: 'Candy Hunter', sans-serif;
+}
+
+.icon-img-40 i {
+  font-size: 40px;
+}
+
+.fab.fa-aws {
+  color: #FF9900;
+}
+
+.fas.fa-cogs {
+  color: #623CE4;
+}
+
+.fab.fa-docker {
+  color: #2496ED;
+}
+
+.fas.fa-sync {
+  color: #F05032;
+}
+
+.fas.fa-robot {
+  color: #EE0000;
+}
+
+.fab.fa-linux {
+  color: #FCC624;
+}
+
 /* ====================== [ Start Responsive ] ====================== */
 @media screen and (max-width: 992px) {
   .md-mb10 {
