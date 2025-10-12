@@ -2685,16 +2685,82 @@ body.loaded {
 }
 
 .contact button:after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 5px;
-  height: 100%;
-  background: var(--maincolor);
-  -webkit-transition: all 0.4s;
-  -o-transition: all 0.4s;
-  transition: all 0.4s;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background: var(--maincolor);
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    transition: all 0.4s;
+}
+
+/* Hire form styles to match contact form */
+.hire-form .form-control {
+    width: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    background: transparent;
+    color: #fff;
+    padding: auto;
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    transition: all 0.4s;
+}
+
+.hire-form .form-control:focus {
+    border-color: #fff;
+}
+
+.hire-form textarea.form-control {
+    min-height: 180px;
+}
+
+.hire-form .butn {
+    padding: 15px 35px;
+    width: 100%;
+    background: transparent;
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 1px;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    overflow: hidden;
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    transition: all 0.4s;
+}
+
+.hire-form .butn .text {
+    position: relative;
+    z-index: 4;
+}
+
+.hire-form .butn:hover {
+    color: #1d1d1d;
+}
+
+.hire-form .butn:hover:after {
+    width: 100%;
+}
+
+.hire-form .butn:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background: var(--maincolor);
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    transition: all 0.4s;
 }
 
 /* Footer
@@ -4698,6 +4764,13 @@ img.left {
   }
   .comments-post .item-box.replayed {
     margin-left: 0;
+  }
+  .hire-form {
+    padding: 20px;
+  }
+  .form-heading {
+    font-size: 20px;
+    margin-bottom: 20px;
   }
 }
 
