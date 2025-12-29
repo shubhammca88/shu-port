@@ -7,7 +7,7 @@ on:
 
 env:
   AWS_REGION: ${{ secrets.AWS_REGION }}
-  S3_BUCKET: ${{ secrets.S3_BUCKET }}
+  AWS_S3_BUCKET_NAME: ${{ secrets.AWS_S3_BUCKET_NAME }}
   
 
 jobs:
@@ -27,7 +27,7 @@ jobs:
 
       - name: Deploy to S3
         run: |
-          aws s3 sync ./ s3://${{ env.S3_BUCKET }}/ --delete --exclude ".git*" --exclude ".github*"
+          aws s3 sync ./ s3://${{ env.AWS_S3_BUCKET_NAME }}/ --delete --exclude ".git*" --exclude ".github*"
 
       # - name: Invalidate CloudFront (optional)
       #   run: |
