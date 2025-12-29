@@ -1251,11 +1251,15 @@ body.loaded {
 
 .nav-top .container .nav-butn {
   position: absolute;
-  top: 0;
+  top: 50%;
   right: 15px;
   font-size: 25px;
   cursor: pointer;
-  display: none;
+  display: block;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  z-index: 101;
 }
 
 .nav-top .social a {
@@ -1283,51 +1287,79 @@ body.loaded {
 }
 
 .nav-top .navbar .navbar-nav {
-  padding: 0;
-  background: transparent;
+  /* Dropdown menu panel (override theme defaults that made it transparent/unstyled) */
+  padding: 18px 22px;
+  background: rgba(29, 29, 29, 0.96);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
 }
 
 .nav-top .navbar .navbar-nav:after {
   display: none;
 }
 
+/* Dropdown navbar (opens from the header, aligned to the right) */
 .navbar {
-  display: block;
+  position: absolute;
+  top: 100%;
+  right: 15px;
+  display: none;
   padding: 0;
-  margin-top: 50px;
+  margin-top: 15px;
+  width: 320px;
+  max-width: calc(100vw - 30px);
+  z-index: 200;
 }
 
 .navbar .navbar-nav {
-  padding: 20px 40px 20px 5px;
-  border-radius: 15px 15px 0 0;
+  /* dropdown box */
+  padding: 18px 22px;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  -webkit-box-shadow: 0 20px 60px rgba(0, 0, 0, 0.55);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.55);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  width: calc(100% - 80px);
-  margin-left: 80px;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 6px;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  width: 100%;
+  margin-left: 0;
   position: relative;
 }
 
 .navbar .navbar-nav:after {
-  content: '';
-  width: 0;
-  height: 0;
-  border-bottom: 75px solid #1d1d1d;
-  border-left: 75px solid transparent;
-  position: absolute;
-  left: -70px;
-  bottom: 0;
+  /* removed notch */
+  display: none;
 }
 
 .navbar .navbar-nav .nav-item {
-  padding: 10px 15px;
+  padding: 0;
   text-transform: uppercase;
   letter-spacing: 0.4px;
   font-size: 12px;
+  width: 100%;
+  text-align: left;
+}
+
+.navbar .navbar-nav .nav-item a {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  -webkit-transition: background-color 0.2s ease, color 0.2s ease;
+  -o-transition: background-color 0.2s ease, color 0.2s ease;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.navbar .navbar-nav .nav-item a:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--maincolor);
 }
 
 /* Titles
@@ -1895,7 +1927,8 @@ body.loaded {
 }
 
 .skills .item {
-  padding: 30px 30px 0;
+  /* Keep progress line from touching the card border */
+  padding: 30px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 10px;
   position: relative;
@@ -1916,6 +1949,7 @@ body.loaded {
   height: 3px;
   background-color: rgba(255, 255, 255, 0.1);
   position: relative;
+  margin-top: 10px;
 }
 
 .skills .skill-progress .progres {
@@ -2436,9 +2470,34 @@ body.loaded {
 }
 
 .services .item {
-  padding: 20px 30px;
+  padding: 15px;
   position: relative;
   z-index: 3;
+  margin-bottom: 15px;
+}
+
+.services .item .d-flex {
+  margin-bottom: 15px;
+}
+
+.services .item .mr-20 {
+  margin-right: 20px;
+}
+
+.services .item .icon-img-50 img {
+  width: 40px;
+  height: 40px;
+}
+
+.services .item h6 {
+  font-size: 14px;
+  margin: 0;
+}
+
+.services .item p {
+  font-size: 13px;
+  line-height: 1.4;
+  margin: 0;
 }
 
 .services .item:hover .bord-color {
@@ -4488,40 +4547,17 @@ img.left {
     padding-right: 40px !important;
   }
   .navbar {
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 100%;
-    padding-top: 80px;
-    padding-bottom: 40px;
-    background: #131313;
-    margin-top: 0px;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
-    display: none;
-    z-index: 4;
+    right: 20px;
+    width: 320px;
+    max-width: calc(100vw - 40px);
   }
-  .navbar .navbar-nav {
-    display: block !important;
-    width: 100%;
-    margin-left: 0;
-    background: transparent;
-    border-radius: 0;
-    text-align: center;
-  }
-  .navbar .navbar-nav li {
-    display: block;
-    font-size: 18px !important;
-  }
-  .navbar .navbar-nav:after {
-    display: none;
+  .navbar .navbar-nav .nav-item {
+    font-size: 16px;
+    padding: 12px 0;
   }
   .nav-top .social,
   .nav-top .info {
     display: none;
-  }
-  .nav-top .navbar {
-    padding: 40px 0;
-    top: 40px;
   }
   .nav-top .nav-butn {
     display: block !important;
