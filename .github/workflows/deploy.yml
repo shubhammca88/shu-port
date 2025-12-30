@@ -29,8 +29,8 @@ jobs:
         run: |
           aws s3 sync ./ s3://${{ env.AWS_S3_BUCKET_NAME }}/ --delete --exclude ".git*" --exclude ".github*"
 
-      # - name: Invalidate CloudFront (optional)
-      #   run: |
-      #     if [ ! -z "${{ vars.CLOUDFRONT_DISTRIBUTION_ID }}" ]; then
-      #       aws cloudfront create-invalidation --distribution-id ${{ vars.CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*"
-      #     fi
+      - name: Invalidate CloudFront (optional)
+        run: |
+          if [ ! -z "${{ vars.CLOUDFRONT_DISTRIBUTION_ID }}" ]; then
+            aws cloudfront create-invalidation --distribution-id ${{ vars.CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*"
+          fi

@@ -4821,3 +4821,153 @@ img.left {
 }
 
 /* ====================== [ End Responsive ] ====================== */
+
+/* Portfolio Modal Styles
+-----------------------------------------------------------------*/
+.portfolio-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.portfolio-modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(5px);
+}
+
+.modal-content {
+  position: relative;
+  background: #1d1d1d;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  max-width: 600px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  transform: scale(0.8);
+  transition: transform 0.3s ease;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.portfolio-modal.active .modal-content {
+  transform: scale(1);
+}
+
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.modal-close:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--maincolor);
+}
+
+.modal-body {
+  padding: 40px;
+}
+
+.modal-header h2 {
+  color: var(--maincolor);
+  margin-bottom: 10px;
+  font-size: 28px;
+}
+
+.modal-header p {
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+
+.modal-main p {
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 30px;
+  color: #ddd;
+}
+
+.modal-main .dot-list {
+  margin-bottom: 30px;
+}
+
+.modal-main .dot-list li {
+  margin-bottom: 15px;
+  font-size: 14px;
+  color: #ccc;
+}
+
+.modal-cta .butn {
+  display: inline-block;
+  text-decoration: none;
+}
+
+/* Mobile responsive */
+@media screen and (max-width: 768px) {
+  .modal-content {
+    width: 95%;
+    max-height: 90vh;
+    border-radius: 10px;
+  }
+  
+  .modal-body {
+    padding: 30px 20px;
+  }
+  
+  .modal-header h2 {
+    font-size: 24px;
+  }
+  
+  .modal-close {
+    top: 15px;
+    right: 15px;
+    width: 35px;
+    height: 35px;
+    font-size: 20px;
+  }
+}
+
+/* Portfolio item hover effect */
+.portfolio-item {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover {
+  transform: translateY(-5px);
+}
+
+.portfolio-link {
+  cursor: pointer;
+}
