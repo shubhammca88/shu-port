@@ -2108,8 +2108,64 @@ body.loaded {
 .intro-profile .box-img {
   margin-bottom: -80px;
   border-radius: 15px 0 15px 15px;
-  padding: 80px 40px;
+  padding: 60px 30px;
   overflow: hidden;
+}
+
+/* Desktop header improvements */
+@media (min-width: 992px) {
+  .intro-profile .box-img {
+    padding: 50px 25px;
+    margin-bottom: -60px;
+  }
+  
+  .intro-profile .content {
+    padding: 60px 30px;
+  }
+  
+  .intro-profile .content h3 {
+    font-size: 28px;
+    line-height: 1.4;
+    margin-top: 60px;
+  }
+  
+  .intro-profile .content .stauts {
+    margin-top: 50px;
+  }
+  
+  .intro-profile .content .stauts h2 {
+    font-size: 50px;
+  }
+  
+  .intro-profile .box-img .img {
+    max-width: 280px;
+    margin: 0 auto;
+  }
+  
+  .intro-profile .box-img .cont {
+    padding: 30px 15px;
+    min-height: calc(100% - 60px);
+  }
+}
+
+/* Large desktop improvements */
+@media (min-width: 1200px) {
+  .intro-profile .content h3 {
+    font-size: 32px;
+    line-height: 1.5;
+  }
+  
+  .intro-profile .content .stauts h2 {
+    font-size: 55px;
+  }
+  
+  .intro-profile .box-img {
+    padding: 60px 35px;
+  }
+  
+  .intro-profile .content {
+    padding: 70px 40px;
+  }
 }
 
 .intro-profile .box-img .img {
@@ -2181,8 +2237,24 @@ body.loaded {
 
 .intro-profile .content {
   border-radius: 0 15px 15px 0;
-  padding: 80px 40px;
+  padding: 60px 30px;
   position: relative;
+}
+
+/* Desktop content improvements */
+@media (min-width: 992px) {
+  .intro-profile .content {
+    padding: 50px 25px;
+    text-align: left;
+  }
+  
+  .intro-profile .content h3 {
+    text-align: left;
+  }
+  
+  .intro-profile .content .stauts {
+    text-align: left;
+  }
 }
 
 .intro-profile .content:after {
@@ -2253,7 +2325,14 @@ body.loaded {
 }
 
 .intro-profile .content .stauts h2 {
-  font-size: 70px;
+  font-size: 50px;
+}
+
+/* Desktop stats improvements */
+@media (min-width: 992px) {
+  .intro-profile .content .stauts h2 {
+    font-size: 45px;
+  }
 }
 
 .intro-profile .content .stauts p {
