@@ -49,12 +49,28 @@ document.addEventListener('DOMContentLoaded', function() {
                 data[key] = value;
             }
             
-            // Add form type to subject
+            // Add formType to data
+            data.formType = formType;
+            
+            // Handle different form types
             if (formType === 'quote') {
-                data.subject = `Work Inquiry: ${data.service || 'General'}`;
+                data.formType = 'work'; // Lambda expects 'work' not 'quote'
+                if (!data.subject) {
+                    data.subject = `Work Inquiry: ${data.service || 'General'}`;
+                }
             } else if (formType === 'hire') {
-                data.subject = `Hire Application: ${data.job_title || 'Position'}`;
-                data.name = data.hr_name || data.company_name;
+                if (!data.subject) {
+                    data.subject = `Hire Application: ${data.job_title || 'Position'}`;
+                }
+                // Ensure name field exists for hire form
+                if (!data.name && data.hr_name) {
+                    data.name = data.hr_name;
+                }
+            } else if (formType === 'contact') {
+                // Ensure subject exists for contact form
+                if (!data.subject) {
+                    data.subject = 'Contact Form Submission';
+                }
             }
             
             // Send to Lambda
